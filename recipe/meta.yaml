@@ -8,12 +8,14 @@ package:
 source:
   - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lvis-{{ version }}.tar.gz
     sha256: 55aeeb84174abea2ed0d6985a8e93aa9bdbb60c61c6db130c8269a275ef61a6e
+    patches:
+      - 42.patch
   - path: requirements.txt
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   build:

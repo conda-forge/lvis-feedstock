@@ -1,0 +1,15 @@
+diff --git a/lvis/eval.py b/lvis/eval.py
+index e21a1f3..2acd6b9 100644
+--- a/lvis/eval.py
++++ b/lvis/eval.py
+@@ -358,8 +358,8 @@ def accumulate(self):
+                 tps = np.logical_and(dt_m, np.logical_not(dt_ig))
+                 fps = np.logical_and(np.logical_not(dt_m), np.logical_not(dt_ig))
+ 
+-                tp_sum = np.cumsum(tps, axis=1).astype(dtype=np.float)
+-                fp_sum = np.cumsum(fps, axis=1).astype(dtype=np.float)
++                tp_sum = np.cumsum(tps, axis=1).astype(dtype=float)
++                fp_sum = np.cumsum(fps, axis=1).astype(dtype=float)
+ 
+                 dt_pointers[cat_idx][area_idx] = {
+                     "dt_ids": dt_ids,
